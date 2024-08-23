@@ -1,0 +1,13 @@
+Instrucciones Efichaje en WSL
+
+#Requisitos y pasos
+- *Python*
+- *Chromedriver*: es necesario disponer de Chrome y Chromedriver, seguir estas instruccines -> https://skolo.online/documents/webscrapping/
+- *Selenium*: pip install selenium
+- *Webdriver*: pip install webdriver-manager
+- *Cron en WSL*: en wsl no se inicia el cron automáticamente, hay que añadirlo para que arranque automáticamente
+-- hay que editoar bashrc -> sudo vi ~/.bashrc
+-- añadir esta línea "sudo service cron start"
+- *Añadir tareas al cron*: Añadir al cron las llamadas para que se ejecuten los tests
+-- 5 7 * * 1-5 python3 -m pytest /root/tests/efichaje.py
+-- 5 14 * * 1-5 python3 -m pytest /root/tests/efichaje-sal-man.py
